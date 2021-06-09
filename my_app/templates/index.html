@@ -1,0 +1,457 @@
+
+{%  load static %}
+
+
+
+<!DOCTYPE html>
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>BEST PRICE</title>
+<base  />
+<meta name="description" content="My Store" />
+<script src="{% static "css/catalog/view/javascript/jquery/jquery-2.1.1.min.js" %}"></script>
+<link href="{% static "css/catalog/view/javascript/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" media="screen" />
+<script src="{% static "css/catalog/view/javascript/bootstrap/js/bootstrap.min.js" %}"></script>
+<link href="{% static "css/catalog/view/javascript/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Nunito:400,400i,300,500,600,700" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Roboto:300,400,400i,600,700" rel="stylesheet" type="text/css" />
+<link href="{% static "css/catalog/view/theme/stylesheet/stylesheet.css" %}" rel="stylesheet">
+<link href="{% static "css/catalog/view/theme/stylesheet/bootstrap.min.css" %}" rel="stylesheet">
+<link href="{% static "css/catalog/view/theme/stylesheet/jquery.fancybox.css" %}" rel="stylesheet">
+<link href="{% static "css/catalog/view/theme/stylesheet/animate.css" %}" rel="stylesheet">
+<link href="{% static "css/catalog/view/javascript/jquery/owl-carousel/owl.carousel.css" %}" rel="stylesheet" type="text/css" />
+<link href="{% static "css/catalog/view/theme/stylesheet/live_search.css" %}c" rel="stylesheet" type="text/css" />
+
+
+<link href="{% static "css/catalog/view/javascript/jquery/swiper/css/swiper.min.css" %}" rel="stylesheet" media="screen" />
+<link href="{% static "css/catalog/view/javascript/jquery/swiper/css/opencart.css" %}" rel="stylesheet" media="screen" />
+<script src="{% static "css/catalog/view/javascript/jquery/swiper/js/swiper.jquery.js" %}"></script>
+<script src="{% static "css/catalog/view/javascript/common.js" %}"></script>
+<script src="{% static "css/catalog/view/javascript/jquery.elevatezoom.min.js" %}"></script>
+<script src="{% static "css/catalog/view/javascript/template_js/jstree.min.js" %}"></script>
+<script src="{% static "css/catalog/view/javascript/tabs.js" %}"></script>
+<script src="{% static "css/catalog/view/javascript/template_js/template.js" %}"></script>
+<script src="{% static "css/catalog/view/javascript/template_js/jquery.firstVisitPopup.js" %}"></script>
+<script src="{% static "css/catalog/view/javascript/template_js/simpleswap.js" %}"></script>
+<script src="{% static "css/catalog/view/javascript/jquery.fancybox.js" %}"></script>
+<script src="{% static "css/catalog/view/javascript/jquery/owl-carousel/owl.carousel.js" %}"></script>
+<script src="{% static "css/catalog/view/javascript/template_js/wow.min.js" %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="{% static "css/style.css" %}">
+
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link href="{% static "css/image/catalog/cart.png" %}" rel="icon" />
+</head>
+
+<body class="common-home lang_en layout-1">
+<nav id="top">
+<div class="container">
+<div class="row">
+<span class="responsive-bar"><i class="fa fa-bars"></i></span>
+<div class="header-middle-outer closetoggle">
+</div>
+</div>
+</div>
+</nav>
+
+<header>
+<div class="header-block">
+<div class="container">
+<div class="row">
+<div class="header-top-block col-sm-12">
+  <div class="header-top-left pull-left">
+    <form action="" method="post" enctype="multipart/form-data" id="form-currency">
+  <div class="btn-group">
+    <button class="btn btn-lin currency">                               <strong>৳</strong>TK
+  </div>
+  </form>
+
+  </div>
+  <div class="header-top-right pull-right">
+    <div class="telephone"><a href="Contact.html?route=information/contact"><i class="fa fa-phone"></i>012 345 567</a></div>
+        <div class="login"><a href="MyAccount.html?route=account/login"><i class="fa fa-user"></i>Login</a></div>
+    <div><a href="reg.html?route=account/register">Signup</a></div>
+      </div>
+</div>
+<div class="header-bottom-block col-sm-12">
+  <div class="header-bottom-left col-xs-6 col-sm-2 col-md-2 col-lg-2">
+    <div class="header-logo">
+    <div id="logo"><a href="index.html?route=common/home"><img src="{% static "css/image/catalog/logo.png" %}" title="BEST PRICE" alt="BEST PRICE " class="img-responsive" /></a></div>
+    </div>
+  </div>
+  <div class="header-bottom-right col-xs-6 col-sm-10 col-md-10 col-lg-10">
+    <div class="header-cart"><div id="cart" class="btn-group btn-block cart_block">
+   <button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="btn btn-inverse btn-block btn-lg dropdown-toggle"><span class="cart-text">My basket</span><span class="cart-total">Item 0</span><span class="cart-total-res">0</span>
+  </button>
+  <a href="{% static "templates/addtocart.html?route=checkout/cart" %}" class="addtocart btn">
+<span class="cart-text">My basket</span>
+<span class="cart-total-res">0</span>
+</a>
+  <ul class="dropdown-menu pull-right">
+        <li>
+      <p class="text-center">Your shopping cart is empty!</p>
+    </li>
+      </ul>
+</div>
+</div>
+
+
+
+
+    <div class="header-menu">
+    <div class="responsive-menubar-block">
+      <span>Shop By<br/> Category</span>
+    <span class="menu-bar collapsed" data-target="#menu" data-toggle="collapse"><i class="fa fa-bars"></i></span>
+    </div>
+    <nav id="menu" class="navbar collapse">
+<div class="navbar-header"> <span id="category" class="visible-xs">Top categories</span>
+  <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+</div>
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav main-navigation">
+            <li class="main_cat dropdown">
+
+
+      <div class="dropdown-menu megamenu column4">
+       <div class="dropdown-inner">
+                </div>
+</div>
+
+<div class="header-static-block">
+<div class="container">
+<div class="row">
+<div class="icon-block">
+  <div class="home_icon">
+  <a href="index.html?route=common/home"><i class="fa fa-home"></i>Home</a>
+  </div>
+  <div class="search_icon">
+  <a href="Search.html?route=product/search"><i class="fa fa-search"></i>Search</a>
+  </div>
+  <div class="cart_icon">
+
+  </div>
+  <div class="login_icon">
+    <a href="MyAccount.html?route=account/login"><i class="fa fa-user"></i>Login</a>
+  </div>
+  <div class="telephone_icon">
+    <a href="Contact.html?route=information/contact"><i class="fa fa-phone"></i>Contact Us</a>
+  </div>
+</div>
+ </div>
+</div>
+</div>
+</header>
+<div class="content-top-breadcum">
+
+</div>
+
+<div id="common-home">
+<div class="main-slider">
+<div id="spinner"></div>
+<div class="swiper-viewport">
+  <div id="slideshow0" class="swiper-container">
+    <div class="swiper-wrapper">       <div class="swiper-slide text-center"><a href="index.html?route=product/product&amp;path=57&amp;product_id=49"><img src="{% static "css/image/cache/catalog/main-banner2-1920x602.jpg" %}" alt="banner " class="img-responsive" /></a></div>
+       </div>
+
+  </div>
+
+  <div class="swiper-pagination slideshow0"></div>
+  <div class="swiper-pager mainbanner">
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+</div>
+<script><!--
+$('#slideshow0').swiper({
+	mode: 'horizontal',
+	slidesPerView: 1,
+	pagination: '.slideshow0',
+  paginationClickable: true,
+	nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 0,
+	autoplay: 5000,
+    autoplayDisableOnInteraction: true,
+	loop: true
+});
+--></script>
+<script>
+	// Can also be used with $(document).ready()
+	$(window).load(function() {
+	  $("#spinner").fadeOut("slow");
+	});
+</script>
+
+     <!-- search -->
+ {% block content %}
+
+<div class="container">
+  <div class="row">
+     <div id="content" class="col-sm-12"><div class="breadcrumb"></div>
+
+  <div class="shipping-outer  wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+    <form action="{% url 'new_search' %}" method="post">
+        {% csrf_token %}
+
+<div id="search" class="input-group">
+  <input type="text" id="search-input" name="search" value="" placeholder="Search" class="form-control input-lg" />
+  <span class="input-group-btn">
+    <button type="submit" class="btn btn-default btn-lg">Search</button>
+  </span>
+</div>
+
+</div>
+    </form>
+
+
+<div class="container">
+  <div class="row">
+                <div id="content" class="col-sm-12"><div class="breadcrumb"></div>
+
+  <div class="shipping-outer  wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+<div class="shipping-inner">
+<div class="heading col-md-3 col-sm-12 col-xs-12">
+  <h2>Why choose us?</h2>
+</div>
+<div class="subtitle-part subtitle-part1 col-md-3 col-sm-4 col-xs-12">
+<div class="subtitle-part-inner">
+<div class="subtitile">
+<div class="subtitle-part-image"></div>
+<div class="subtitile1">On time delivery</div>
+</div>
+</div>
+</div>
+<div class="subtitle-part subtitle-part2 col-md-3 col-sm-4 col-xs-12">
+<div class="subtitle-part-inner">
+<div class="subtitile">
+<div class="subtitle-part-image"></div>
+<div class="subtitile1">Free delivery</div>
+<div class="subtitile2">Order over ৳ 1000</div>
+</div>
+</div>
+</div>
+<div class="subtitle-part subtitle-part3 col-md-3 col-sm-4 col-xs-12">
+<div class="subtitle-part-inner">
+<div class="subtitile">
+<div class="subtitle-part-image"></div>
+<div class="subtitile1">Quality assurance</div>
+<div class="subtitile2">You can trust us</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="category-banner-block wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+<h3>top categories</h3>
+<div class="row">
+      <div class="product-layout col-lg-2 col-md-2 col-sm-4 col-xs-4">
+      <div class="product-thumb transition">
+         <div class="caption categoryname">
+          <h4><b>Apples</b></h4>
+
+        </div>
+        <div class="image"><img src="{% static "css/image/cache/catalog/apple.jpg" %}" alt="Apple" title="Apple" class="img-responsive"/></a></div>
+        <div class="cms-desc">
+        <div class="cms-text2">@ 150৳/Kg</div>
+        <div class="cms-text3">Shop for ৳ 1000</div>
+
+      </div>
+      </div>
+    </div>
+      <div class="product-layout col-lg-2 col-md-2 col-sm-4 col-xs-4">
+      <div class="product-thumb transition">
+         <div class="caption categoryname">
+          <h4><b>Onion</b></h4>
+        </div>
+        <div class="image"><img src="{% static "css/image/cache/catalog/onion-local-1-kg.jpg" %}" alt="Onion" title="Onion" class="img-responsive"/></a></div>
+        <div class="cms-desc">
+        <div class="cms-text2">@ 150৳/Kg</div>
+        <div class="cms-text3">Shop for ৳ 1000</div>
+        </div>
+
+      </div>
+    </div>
+      <div class="product-layout col-lg-2 col-md-2 col-sm-4 col-xs-4">
+      <div class="product-thumb transition">
+         <div class="caption categoryname">
+          <h4><b>Chicken</b></h4>
+        </div>
+        <div class="image"><img src="{% static "css/image/cache/catalog/Chicken.jpg" %}" alt="Chicken" title="Chicken" class="img-responsive"/></a></div>
+        <div class="cms-desc">
+        <div class="cms-text2">@ 130৳/kg</div>
+        <div class="cms-text3">Shop for ৳ 1000</div>
+        </div>
+        </div>
+      </div>
+
+      <div class="product-layout col-lg-2 col-md-2 col-sm-4 col-xs-4">
+      <div class="product-thumb transition">
+         <div class="caption categoryname">
+          <h4><b>Potato</b></h4>
+        </div>
+        <div class="image"><img src="{% static "css/image/cache/catalog/potato.jpg" %}" alt="Potato" title="Potato" class="img-responsive"/></a></div>
+        <div class="cms-desc">
+        <div class="cms-text2">@ 25৳/kg</div>
+        <div class="cms-text3">Shop for ৳ 1000</div>
+        </div>
+      </div>
+    </div>
+        <div class="product-layout col-lg-2 col-md-2 col-sm-4 col-xs-4">
+        <div class="product-thumb transition">
+           <div class="caption categoryname">
+            <h4><b>Moshur Dal</b></h4>
+          </div>
+          <div class="image"><img src="{% static "css/image/cache/catalog/Moshur Dal.jpg" %}" alt="Moshur Dal" title="Moshur Dal" class="img-responsive"/></a></div>
+          <div class="cms-desc">
+          <div class="cms-text2">@ 100৳/kg</div>
+          <div class="cms-text3">Shop for ৳ 1000</div>
+          </div>
+          </div>
+        </div>
+        <div class="product-layout col-lg-2 col-md-2 col-sm-4 col-xs-4">
+        <div class="product-thumb transition">
+           <div class="caption categoryname">
+            <h4><b>Strawberry</b></h4>
+          </div>
+          <div class="image"><img src="{% static "css/image/cache/catalog/strawberry.jpg" %}" alt="strawberry" title="strawberry" class="img-responsive"/></a></div>
+          <div class="cms-desc">
+          <div class="cms-text2">@ 110৳/kg</div>
+          <div class="cms-text3">Shop for ৳ 1000</div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+{% endblock content  %}
+    <div class="container">
+        <div class="footer_block">
+       <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-3 column myaccount">
+   <!--    <h4>My Account</h4>  -->
+          <h3 class="collapsed" data-target="#dropdown-account" data-toggle="collapse">My Account <span class="icon"></span></h3>
+          <ul class="list-unstyled collapse" id="dropdown-account">
+            <li><a href="MyAccount.html?route=account/account">My Account</a></li>
+            <li><a href="MyAccount.html?route=account/order">Order History</a></li>
+            <li><a href="MyAccount.html?route=account/wishlist">Wish List</a></li>
+            <li><a href="MyAccount.html?route=account/newsletter">Newsletter</a></li>
+          </ul>
+        </div>
+                <div class="col-xs-12 col-sm-12 col-md-3 column information">
+
+        </div>
+            	  <div class="col-xs-12 col-sm-12 col-md-3 column customlink">
+
+
+        </div>
+
+
+        <div class="col-xs-12 col-sm-12 col-md-3 column extra">
+
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-3 column contacts">   <div class="footer-common collapsible mobile-collapsible">
+ <div class="footer-static">
+
+   <h3 class="collapsed" data-target="#dropdown-contact" data-toggle="collapse">Contacts <span class="icon"></span> </h3>
+   <ul class="clearfix collapse" id="dropdown-contact">
+     <li class="item">Bashundhara, Dhaka-1229.<br>Bangladesh</li>
+       <li class="item email"><a href="mailto:info@northsouth.edu?Subject=Feedback&amp;Body=start">info@northsouth.edu</a></li>
+       <li class="item call">(+880) 12-3456-7890</li>
+   </ul>
+ </div>
+</div>
+
+
+
+ </div>
+         </div>
+
+
+
+</div>
+</div>
+<div class="newsletters">
+<div class="news-head">
+<h2><b>Subscribe for our offer news</b></h2>
+
+</div>
+<div class="news-form">
+
+    <form method="post" class="form-horizontal" id="form-newsletter">
+        <div class="form-group" id="form-newsletter-error">
+
+             <div id="newsletter-email">
+                <input type="email" name="txtemail" id="txtemail" value="" placeholder="Enter your email address" class="form-control"/>
+               <button type="submit" onclick="return regNewsletter();" id="email-popup-submit" class="btn btn-default btn-lg">
+                    Subscribe       </button>
+
+            </div>
+
+        </div>
+    </form>
+
+</div>
+</div>
+ </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+       <div class="footer-bottom-down col-md-12 col-sm-12 col-xs-12">  <div class="footer-bottom-section1 footer_payment section col-md-4 col-xs-12">
+  <div class="payment">
+    <div class="section-heading">payment option </div>
+    <ul class="payment_icon">
+      <li><a class="mastercard" title="mastercard" href="#"><i class="fa fa-cc-mastercard" aria-hidden="true"></i></a></li>
+      <li><a class="paypal" title="paypal" href="#"><i class="fa fa-cc-paypal" aria-hidden="true"></i></a></li>
+      <li><a class="visa" title="visa" href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+  <div class="section app col-md-4 col-xs-12">
+
+</div>
+
+  <div class="footer-bottom-section3 footer_social section col-md-4 col-xs-12">
+  <div class="section-heading">Social media</div>
+  <ul class="social-icon">
+    <li><a class="facebook" title="Facebook" href="#"><i class="fa fa-facebook"> </i>&nbsp;</a></li>
+    <li><a class="twitter" title="Twitter" href="#"><i class="fa fa-twitter"> </i>&nbsp;</a></li>
+    <li><a class="instagram" title="Instagram" href="#"><i class="fa fa-instagram"> </i>&nbsp;</a></li>
+    <li><a class="youtube" title="youtube" href="#"><i class="fa fa-youtube"> </i>&nbsp;</a></li>
+  </ul>
+</div>
+
+ </div>
+
+        <div class="footer-bottom">
+          <div class="copy-right col-md-12 col-sm-12 col-xs-12">
+            <div id="powered">Powered By <a href=""></a>BEST PRICE &copy; 2019</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
