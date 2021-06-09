@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>System Design Specification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+      position: relative;
+  }
+  ul.nav-pills {
+      position:fixed;
+  }
+  div.col-8 div {
+      height: 200px;
+  }
+</style>
+</head>
+<body style="background-color:#566573; color:white;" data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand/logo -->
+  <img src="src/BP.png" alt="BestPriceUI" style="width:15%"></img>
+  <header class="page header text-white"><h1 style="padding-left:10px;">System Design Specification for Best Price</h1></header>
+
+  <!-- Links -->
+
+
+</ul>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-sm-2 col-4 bg-dark" id="myScrollspy" >
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Introduction</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec1.1">Purpose of the Document</a>
+            <a class="dropdown-item" href="#sec1.2">Document Conventions</a>
+            <a class="dropdown-item" href="#sec1.3">Intended Audience <br> and Reading Suggestions</a>
+          </div>
+
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Architecture Design</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec2.1">Software Architecture</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Component Design</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec3.1">Database Design</a>
+            <a class="dropdown-item" href="#sec3.2">Data Transfer</a>
+            <a class="dropdown-item" href="#sec3.3">API Interface</a>
+            <a class="dropdown-item" href="#sec3.4">User Interface Design</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Class Design</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec4.1">High Level Class Design</a>
+            <a class="dropdown-item" href="#sec4.2">Details of Classes</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Database Persistence</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec5.1">Intro</a>
+            <a class="dropdown-item" href="#sec5.2">Django Framework</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Development Design</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec6.1">Strategy Pattern</a>
+            <a class="dropdown-item" href="#sec6.2">Development Lifecycle <br> Model</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">API & Endpoints</a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#sec7.1">Google Account Services</a>
+            <a class="dropdown-item" href="#sec7.2">Google Vision API</a>
+            <a class="dropdown-item" href="#sec7.3">Endpoints</a>
+	    <a class="dropdown-item" href="#sec7.4">Group Members Name</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  
+    <div style="padding-top:30px; padding-left:30px; padding-right:150px;" class="col-sm-10 col-8">
+
+      <h2 id="sec1.1" style="color:#5FD3BC;">1. Introduction</h2></p>
+
+      <h4>1.1 Purpose of the Document</h4>
+      <p> This design document describes all the data, architectural, interface and component level designs for the Best Price.
+        The design specification provides explicit information about the requirements for the product and how the product will be put together. </p>
+
+      <h4 id="sec1.2">1.2 Document Conventions</h4>
+      <p> Typical document conventions are maintained where main topics are bold, have a font size of about 20pt. Sub topics are bold, have a smaller font size of about 16pt and are numbered with the main topic number as a prefix, eg 1.1 to 1.5. </p>
+
+      <h4 id="sec1.3">1.3 Intended Audience and Reading Suggestions</h4>
+      <p> The intended audience for this document are project managers and developers. This document is meant to be used as a guideline for all the development needs of its creators. The document contains several technical terminologies and diagrams, hence readers are advised to have predetermined knowledge about the topics covered. </p>
+
+      <br><br>
+
+      <h2 style="color:#5FD3BC;">2. Architecture Design</h2>
+
+      <p> This section highlights the main design patterns and architecture to be used in the development of the Best Price Application.
+
+      <h4 id="sec2.1">2.1 Software Architecture</h4>
+      <p> The 'Best Price' application will be using the industry standard 'Model View Controller' Design Architecture or MVC for short.
+          There will be a total of 3 core components to this design pattern, the view, the view controller and the model. The view will be responsible for what the user sees and interacts with. In the case of the "Best Price" application the main view will be the android application that the user will interact with. Apart from the primary android application, a web based interaction method will also be available. </p>
+
+          The view controller will be the backend of the android application that will process the interactions conducted by the end user and package the requirements to the model to further process them. The model will be responsible for the manipulation of the data to and from the database. It will prepare the data to be served to the database. Best Price will be using the open source Django framework to act as the model. Its ORM features will be highly beneficial to the fast development of the software. </p>
+
+          Advantages of using MVC: </p>
+
+          <li>More versatile applications</li>
+          <li>Easier to manage applications</li>
+          <li>Be able to easily change data leaving everything else same</li>
+          <li>Separates different functionality and the different components into individual packages of code</li>
+          <li>Easier to debug </li></p>
+
+          <img src="src/MVC.png" alt="BestPriceERD" style="width:80%"> </p>
+
+
+
+      <br><br><br>
+
+
+
+      <h2 style="color:#5FD3BC;">3. Component Design</h2>
+      <p>The Best Price service consists of mainly 3 major components - the Front End application, the Django Backend and the Postgree Sql.
+
+      <h4 id="sec3.1">3.1 Database Design</h4>
+      <p>There are two approaches for developing any database, the top-down method and the bottom-up method. We followed top-down approach to design our database.We modeled the objects at a logical level, then we applied the objects to a physical database design. For example, a relational database would need the objects to be mapped to tables. <br> </p>
+      <img src="src/ERD.png" alt="BestPriceERD" style="width:80%">
+
+      <h4 id="sec3.2">3.2 Data Transfer</h4>
+      <p>An HTTPS link will be called to send and retrieve data. POST and PUT operations write new data and PATCH updates them. CURL and GET operations are used for reading the data but usually requires an AUTH call to be succesful for them to work. Final URL depends heavily on hosting services used.<br></p>
+      
+
+      <h4 id="sec3.4">3.4 User Interface Design</h4>
+      <p>The user interface for the client side shall be the android app and a web-based app. The android app's UI will be based on Android's TabbedActivity and additionally be following Google's Material design language. The TabbedActivity will house the 3 main interfaces - the camera, the overview and the history.</p>
+      <br><br><br>
+
+
+
+      <h2 style="color:#5FD3BC;">4. Class Design</h2>
+      <p> This section focuses on the high level class diagram which demonstrates the relation between the classes. A detailed description of each class is given for a clear grasp of their function in the product.
+
+      <h4 id="sec4.1">4.1 High Level Class Design</h4>
+      <p> The following figure is the high level class diagram of Best Price - Recommended Search: </p>
+      <img src="src/ClassDiagram.png" alt="BestPriceERD" style="width:80%">
+      <p style="font-size:90%"><i><center>Figure: High Level Class Diagram (Best Price - Recommended Search) </i></center></p>
+
+      <h4 id="sec4.2">4.2 Details of Classes</h4>
+      <p> The following tables explain the type, purpose, function(s), subordinate(s) and dependencies of each of the classes of the Koto application: </p>
+      <img src="src/registration.png" alt="BestPriceERD" style="width:80%">
+      <p style="font-size:90%"><i><center>Table User-Registration </i></center></p>
+      <img src="src/login.png" alt="BestPriceERD" style="width:80%">
+      <p style="font-size:90%"><i><center>Table Login</i></center></p>
+      <img src="src/AddItemsToCategory.png" alt="BestPriceERD" style="width:80%">
+      <p style="font-size:90%"><i><center>Table AddItemsToCategory </i></center></p>
+      <img src="src/search.png" alt="BestPriceERD" style="width:80%">
+      <p style="font-size:90%"><i><center>Table search </i></center></p>
+      <img src="src/Place_Order.png" alt="BestPriceERD" style="width:80%">
+      <p style="font-size:90%"><i><center>Table Place_Order </i></center></p>
+      <img src="src/Ai Chat-bot.png" alt="BestPriceERD" style="width:80%">
+      <p style="font-size:90%"><i><center>Table Ai Chat-bot </i></center></p>
+       <img src="src/ShoppingCart.png" alt="BestPriceERD" style="width:80%">
+      <p style="font-size:90%"><i><center>Table ShoppingCart </i></center></p>
+
+      <br><br><br>
+
+
+
+      <h2 style="color:#5FD3BC;">5. Database Persistence</h2>
+      <h4 id="sec5.1">5.1 Introduction</h4>
+      <p> In the context of storing data in a computer system, persistence means that the data survives after the process with which it was created has ended. In other words, for a data store to be considered persistent, it must write to non-volatile storage. Given the importance of the data store in most modern applications, making a poorly informed choice could mean substantial downtime or loss of data.</P>
+      <p>There are four main design approaches that a data store can take to make a database persistence:</p>
+      <ul><li>Pure in-memory, no persistence at all, such as memcached or Scalaris</li>
+          <li>In-memory with periodic snapshots, such as Oracle Coherence or Redis</li>
+          <li>Disk-based with update-in-place writes, such as MySQL ISAM or MongoDB</li>
+          <li>Commitlog-based, such as all traditional OLTP databases (Oracle,SQL Server, etc.)</li>
+        </ul>
+        <p>Most of BestPrice’s data is structured and relational hence does not require a nonSQL database system such as Firebase. So, Usage of a MySql relational database will be of highest efficiency which will be done using Django Framework.</p>
+
+
+      <h4 id="sec5.2">5.2 Django Framework</h4>
+      <p>Django open-source web framework, written in Python, which follows the model-view-template (MVT) architectural pattern.</p>
+      <p>Django's primary goal is to ease the creation of complex, database-driven websites. Django emphasizes reusability and "pluggability" of components, less code, low coupling, rapid development, and the principle of don't repeat yourself. Python is used throughout, even for settings files and data models. Django also provides an optional administrative create, read, update and delete interface that is generated dynamically through introspection and configured via admin models.</p>
+      <p>Despite having its own nomenclature, such as naming the callable objects generating the HTTP responses "views",the core Django framework can be seen as an MVC architecture. It consists of an object-relational mapper (ORM) that mediates between data models (defined as Python classes) and a relational database ("Model"), a system for processing HTTP requests with a web templating system ("View"), and a regular-expression-based URL dispatcher ("Controller").</p>
+      <p>Also included in the core framework are:</p>
+      <ul><li>A lightweight and standalone web server for development and testing</l>
+        <li>A form serialization and validation system that can translate between HTML forms and values suitable for storage in the database</li>
+        <li>A template system that utilizes the concept of inheritance borrowed from object-oriented programming</li>
+        <li>A caching framework that can use any of several cache methods</li>
+        <li>Support for middleware classes that can intervene at various stages of request processing and carry out custom functions</li>
+        <li>An internal dispatcher system that allows components of an application to communicate events to each other via pre-defined signals</li>
+        <li>An internationalization system, including translations of Django's own components into a variety of languages</li>
+        <li>A serialization system that can produce and read XML and/or JSON representations of Django model instances</li>
+        <li>A system for extending the capabilities of the template engine</li>
+        <li>An interface to Python's built-in unit test framework</li>
+      </ul>
+
+        <img src="src/Django.png" alt="BestPriceERD" style="width:60%">
+
+
+      <p>The main Django distribution also bundles a number of applications in its "contrib" package, including:</p>
+      <ul><li>An extensible authentication system</li>
+          <li>The dynamic administrative interface</li>
+          <li>Tools for generating RSS and Atom syndication feeds</li>
+          <li>A site's framework that allows one Django installation to run multiple websites, each with their own content and applications</li>
+          <li>Tools for generating Google Sitemaps</li>
+          <li>Built-in mitigation for cross-site request forgery, cross-site scripting, SQL injection, password cracking and other typical web attacks, most of them turned on by default</li>
+          <li>A framework for creating GIS applications</li>
+        </ul>
+
+
+
+
+
+      <h2 style="color:#5FD3BC;">6. Development Design</h2>
+
+      <h4 id="sec6.1">6.1 Strategy Pattern</h4>
+      <p> The Best Price application will mostly be using the strategy pattern. It will try to help develop the application in such a way to optimize scalability. It will help the application stay open for extension and closed for modification. The strategy pattern is a behavioral software design pattern that enables selecting an algorithm at runtime. Instead of implementing a single algorithm directly, code receives run-time instructions as to which in a family of algorithms to use. </p>
+
+      <h4 id="sec6.2">6.2 Development Lifecycle Model</h4>
+      <p>From the many existing software development lifecycle methodologies, Best Price shall be developed using the 'Iterative & Incremental Method'. The iterative and incremental method has proven to be highly successful for developments spanning a short amount of time. The approach produces ongoing release cycles, each featuring small, incremental changes from the previous release. At each iteration, the product is tested. The iterative and incremental model helps teams identify and address small issues on projects before they evolve into more significant problems, and get feedback throughout the development process. As Best Price is being developed with a small team in a short amount of time, the iterative and incremental method seems to be the perfect fit.</p>
+
+      <br><br><br>
+
+      <h2 style="color:#5FD3BC;">7.API & Endpoints</h2>
+      <p>
+
+      <h4 id="sec7.1">7.1 Google Account Services</h4>
+      <p> The Best Price will provide users with multiple options to login and registration. A user will have the option to register manually or using Google account services which will provide the application the user’s Google account information. Google account services can later be extended in allowing the user to login using their Google accounts, in this case the user must be logged in or login to their Gmail accounts to allow the app to authenticate the user.</p>
+
+
+      <h4 id="sec7.2">7.2 Scrapper API</h4>
+      <p>Scrapy is an open source web scraping framework written in Python which takes care of everything from downloading HTML if web pages to storing them.</p>
+      <p>The Best Price application will use the scrapper api.</p>
+      <ul><li>Website: https://www.scraperapi.com/</li>
+        <li>Sign-Up in the website</li>
+        <li>Got an API key</li>
+        <li>A device that runs a website</li>
+      </ul>
+
+
+      <h4 id="sec7.3">7.3 Endpoints</h4>
+      <p>Since the application is heavily depended on the features of android mobile devices a common endpoint of the system will be user’s mobile devices. </p>
+      <p>In addition to that users will also be able to view certain details of their accounts using a web application thus making a laptop or a desktop another possible endpoint of the program.</p>
+      <br><br><br>
+
+      <div style="padding-top:20px;" class="row">
+      </div>
+ <h2 id="sec1.1" style="color:#5FD3BC;">Group Number and Group Members </h2></p>
+         <div class="panel">
+            <p>This is Group-6 and the group members name are given below with their id.</p>
+            <table class="table">
+              <tr>
+                <th>Name</th>
+                <th>ID</th>
+              </tr>
+              <tr>
+                <td>Mohammad Ibtesum Sakib</td>       
+                <td>1711260642</td>
+              </tr>
+              <tr>
+                <td>S.M. Niaz Mahmud</td>
+                <td>1713079042</td>
+              </tr>
+              <tr>
+                <td>Md. Musfiqur Rahman</td>
+                <td>1721360042</td>
+              </tr>
+            </table>
+         </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
