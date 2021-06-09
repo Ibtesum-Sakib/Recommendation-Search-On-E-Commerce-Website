@@ -1,0 +1,194 @@
+/*
+ *     Core Owl Carousel CSS File
+ *    v1.3.3
+ */
+
+/* clearfix */
+.owl-carousel .owl-wrapper:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+/* display none until init */
+.owl-carousel{
+    display: none;
+    position: relative;
+    width: 100%;
+    -ms-touch-action: pan-y;
+}
+.owl-carousel .owl-wrapper{
+    display: none;
+    position: relative;
+    -o-transform: translate3d(0px,0px,0px);
+    transform: translate3d(0px,0px,0px);
+    -webkit-transform: translate3d(0px,0px,0px);
+    -moz-transform: translate3d(0px,0px,0px);
+    -ms-transform: translate3d(0px,0px,0px);
+}
+.owl-carousel .owl-wrapper-outer{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.owl-carousel .owl-wrapper-outer.autoHeight{
+    -webkit-transition: height 500ms ease-in-out;
+    -moz-transition: height 500ms ease-in-out;
+    -ms-transition: height 500ms ease-in-out;
+    -o-transition: height 500ms ease-in-out;
+    transition: height 500ms ease-in-out;
+}
+
+.owl-carousel .owl-item{
+    float: left;
+}
+.owl-controls .owl-page,
+.owl-controls .owl-buttons div{
+    cursor: pointer;
+}
+
+.owl-controls {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+.main-slider .owl-controls .owl-buttons .owl-next{
+ display: inline-block;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    margin:0px 3px;
+    top:45%;
+    right: 25px !important;
+    left: auto !important;
+
+}
+.main-slider .owl-controls .owl-buttons .owl-prev{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 30px;
+    margin:0px 3px;
+    top:45%;
+    left: 25px !important;
+    right: auto !important;
+}
+
+
+
+/* mouse grab icon */
+.grabbing {
+    cursor:url(grabbing.png) 8 8, move;
+}
+
+/* fix */
+.owl-carousel  .owl-wrapper,
+.owl-carousel  .owl-item{
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility:    hidden;
+  -ms-backface-visibility:     hidden;
+  -o-transform: translate3d(0px,0px,0px);
+  transform: translate3d(0px,0px,0px);
+  -webkit-transform: translate3d(0px,0px,0px);
+  -moz-transform: translate3d(0px,0px,0px);
+  -ms-transform: translate3d(0px,0px,0px);
+}
+
+/* OpenCart Code */
+.owl-carousel {
+    margin: 0;
+    position: relative;
+    direction: ltr !important;
+}
+.owl-buttons {
+    position: absolute;
+    top: -56px;
+    right: 0px;
+}
+.owl-pagination {
+    text-align: center;
+}
+.owl-controls .owl-page {
+    display: inline-block;
+    margin: 0px 4px;
+}
+.owl-controls .owl-page span {
+    display: block;
+    width: 11px;
+    height: 11px;
+    background: #000;
+    border-radius: 20px;
+    opacity: 1;
+    transition: 0.5s;
+}
+.owl-controls .owl-page.active span,.owl-controls .owl-page:hover span  {
+    background-color: #84c225;
+    opacity: 1;
+    color: #014181;
+    width: 25px;
+    transition: 0.5s;
+}
+.owl-carousel .owl-buttons div {
+    line-height: 26px;
+    padding: 0px;
+    margin: 0 8px 0 0px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 0px;
+    border-radius: 5px;
+    color: #808080;
+    float: left;
+    border: 1px solid #ebebeb;
+}
+.thumbnails .owl-carousel .owl-buttons div{margin: 0; border: none;}
+
+.owl-carousel .owl-buttons div:hover{
+    border-color: #014181;
+    color: #014181;
+}
+.brand .owl-buttons{
+    position: absolute;
+    top: 137px;
+    left: 30px;
+    right: auto;
+}
+.thumbnails .owl-buttons {
+    position: absolute;
+    top: 35px;
+    left: 0px;
+    opacity: 0;
+    right: auto;
+    width: 100%;
+}
+.thumbnails:hover .owl-buttons{opacity: 1;}
+
+.thumbnails .owl-buttons .owl-prev{
+    left: 0;
+    right: auto;
+    position: absolute;
+}
+.thumbnails .owl-buttons .owl-next{
+    left: auto;
+    right: 0px;
+    position: absolute;
+}
+@media (max-width: 991px) {
+.thumbnails .owl-buttons{
+    top: 42px;
+}
+}
+@media (max-width: 479px) {
+    .owl-carousel .owl-buttons div{display: inline-block;}
+    .brand .owl-buttons{top: 87px;}
+    .thumbnails .owl-buttons{
+        top: 28px;
+    }
+}
+

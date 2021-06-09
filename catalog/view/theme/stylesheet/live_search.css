@@ -1,0 +1,112 @@
+.live-search {
+	background-color: #f2f2f2;
+	display: none;
+	left: 0px;
+	padding: 15px;
+	position: absolute;
+	top: 40px;
+	border-radius: 5px;
+	width: 100%;
+	z-index: 1000
+}
+.ajaxcart
+{
+	background-color: #fff;
+}
+.ajaxcart:hover{
+	background-color: #84c225;
+	
+}
+.live-search .loading {
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}
+.live-search ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0
+}
+.live-search ul li {
+	cursor: pointer;
+	padding: 5px;
+	margin: 0 0 10px;
+	clear: both;
+	float: left;
+	height: auto!important;
+	width: 100%
+}
+.live-search ul li a {
+	text-decoration: none;
+	display: block
+}
+.live-search ul li .product-name {
+	color: #000
+}
+.live-search ul li a:hover,
+.live-search ul li .product-name:hover {
+	color: #da251d
+}
+.live-search ul li .product-image {
+	float: left;
+	margin-right: 10px;
+	border: 1px solid #ebebeb;
+	border-radius: 5px;
+	overflow: hidden;
+}
+.live-search ul li .product-name p {
+	font-weight: 400;
+	font-style: italic;
+	font-size: 12px;
+	color: #a4a4a4;
+	margin: 0;
+	padding: 0
+}
+.live-search ul li .product-name {
+	font-weight: 400;
+	float: left;
+	width: 65%;
+	font-size: 13px
+}
+.live-search ul li .product-name:hover,
+.live-search ul li .product-name:focus {
+	color: #000
+}
+.live-search ul li .product-price {
+	text-align: left;
+	font-weight: 400;
+	float: left;
+	margin: 5px 0 10px;
+	width: 65%;
+	font-size: 13px
+}
+.live-search ul li .product-price .price {
+	float: left;
+	margin: 0 0 0 5px
+}
+.live-search ul li .product-price .special {
+	color: #737373;
+	text-decoration: line-through;
+	float: left
+}
+.live-search .result-text {
+	background-color: #84c225;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 32px;
+	margin-top: 20px;
+	text-align: center;
+	clear: both;
+	border-radius: 5px;
+}
+.live-search .result-text a {
+	color: #fff
+}
+.live-search .result-text:hover{
+	background-color: #da251d;
+	transition: all 0.6s ease 0s
+}
+.live-search .result-text:hover a {
+	color: #fff;	
+	transition: all 0.6s ease 0s
+}
